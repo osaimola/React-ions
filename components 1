@@ -1,0 +1,20 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class MyComponentClass extends React.Component {
+// your component subclasses the react.component and can contain other methods we want to use but constants will cause errors
+  getCount(){
+    let word = Math.random() < .5 ? 'Yes' : 'No'
+    return <h1>{word}</h1>;
+  }
+  
+// render method is required and MUST return the JSX element we want this component to display
+  render() {
+    return this.getCount();
+  }
+}
+
+// component goes in here. ReactDOM.render can take either JSX elements or components
+ReactDOM.render(<MyComponentClass />,
+                document.getElementById('app')
+);
